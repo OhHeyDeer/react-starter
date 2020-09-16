@@ -51,7 +51,7 @@ class Search extends Component {
         // Conditionally render the button depending on if it exists in the data
         
         return (
-            <form>
+            <form className="search">
                 <input type="text" value={this.state.searchVal} onChange={(e) => { this.change(e, () => { this.handleChangeButton(); }); } }/>
             {this.state.button}
         </form>
