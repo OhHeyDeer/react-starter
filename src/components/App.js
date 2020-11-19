@@ -5,17 +5,19 @@ import Search from './search.js';
 
 import movieList from '../lib/moviesData.js';
 
+
+// Bootstrap Components
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 class App extends React.Component {
   constructor() {
     super();
-
-
     this.state = {
-      movies: [],
-      
+      movies: []
     }
   }
-
   componentDidMount() {
     this.setState({
       movies: movieList
@@ -25,14 +27,21 @@ class App extends React.Component {
 
   render(){
     return(
-      <div>
-        <h1 class="title">Nicks Movie List</h1>
-        <div>
-        <Search list={this.state.movies}/>
-        </div>
-          
-        <MoviesView list={this.state.movies}/>
-      </div>
+      <Container>
+        <Col xs="2"></Col>
+        <Col xs="8" className="basic-col-wrapper">
+          <Row className="basic-row-wrapper">
+            <h1 className="title">Nicks Movie List</h1>
+          </Row>
+          <Row className="search-wrapper">
+            <Search list={this.state.movies}/>
+          </Row>
+          <Row className="list-wrapper">
+            <MoviesView list={this.state.movies}/>
+          </Row>
+        </Col>
+        <Col xs="2"></Col>
+      </Container>
   )}
 }
 

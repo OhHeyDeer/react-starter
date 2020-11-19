@@ -52,7 +52,7 @@ class Search extends Component {
         
         return (
             <form className="search">
-                <input type="text" value={this.state.searchVal} onChange={(e) => { this.change(e, () => { this.handleChangeButton(); }); } }/>
+                <input className="input-form" type="text" value={this.state.searchVal} onChange={(e) => { this.change(e, () => { this.handleChangeButton(); }); } }/>
             {this.state.button}
         </form>
     )}
